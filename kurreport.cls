@@ -50,14 +50,17 @@
 				\coordinate (bottom left)  at ($ (current page.south west) + (2cm,  .5cm) $);
 				\coordinate (bottom right) at ($ (current page.south east) + (-.5cm, .5cm) $);%
 				%plases
-				\node [report black] at ($ (bottom left) + (12cm, .7cm) $) {\large{\@title}};
-				\node [report black] at ($ (bottom right) + (-1cm, 12mm) $) [right] {Лист};
-				\node [report black] at ($ (bottom right) + (-5mm, 4mm) $) {\large{\thepage}};
-				\node [report black] at ($ (bottom left) + (0cm, 25mm) $) [right] {Изм.};
-				\node [report black] at ($ (bottom left) + (1cm, 25mm) $) [right] {Лист};
-				\node [report black] at ($ (bottom left) + (2.5cm, 20mm) $) [right] {\No докум.};
-				\node [report black] at ($ (bottom left) + (4.5cm, 25mm) $) [right] {Подпись};
-				\node [report black] at ($ (bottom left) + (6cm, 25mm) $) [right] {Дата};%
+				\node [report black] at ($ (bottom left) + (13cm, 3.16cm) $) {\large{\@title}};
+				\node [report black] at ($ (bottom left) + (0cm, 27.1mm) $) [right] {Изм.};
+				\node [report black] at ($ (bottom left) + (1cm, 27.1mm) $) [right] {Лист};
+				\node [report black] at ($ (bottom left) + (2.5cm, 27mm) $) [right] {\No докум.};
+				\node [report black] at ($ (bottom left) + (4.5cm, 27.1mm) $) [right] {Подпись};
+				\node [report black] at ($ (bottom left) + (6cm, 27.1mm) $) [right] {Дата};
+				\node [report black] at ($ (bottom right) + (-4.7cm, 22mm) $) [right] {Лит.};
+				\node [report black] at ($ (bottom right) + (-3.3cm, 22mm) $) [right] {Лист};
+				\node [report black] at ($ (bottom right) + (-2.8cm, 17mm) $) {\large{\thepage}};%
+				\node [report black] at ($ (bottom right) + (-1.6cm, 22mm) $) [right] {Листов};
+				\node [report black] at ($ (bottom right) + (-1.0cm, 17mm) $) {\large{\pageref{LastPage}}};%
 				%borders
 				\draw[report frame]
 					(bottom right) --
@@ -108,6 +111,30 @@
 				\draw[report thin]
 					($ (bottom left) + (0cm, 5mm) $) --
 					($ (bottom left) + (7cm, 5mm) $);
+				\draw[report frame]
+					($ (bottom right) + (-5cm, 0mm) $) --
+					($ (bottom right) + (-5cm, 25mm) $);
+				\draw[report frame]
+					($ (bottom right) + (-3.5cm, 15mm) $) --
+					($ (bottom right) + (-3.5cm, 25mm) $);
+				\draw[report frame]
+					($ (bottom right) + (-2cm, 15mm) $) --
+					($ (bottom right) + (-2cm, 25mm) $);
+				\draw[report frame]
+					($ (bottom right) + (-5cm, 15mm) $) --
+					($ (bottom right) + (0cm, 15mm) $);
+				\draw[report frame]
+					($ (bottom right) + (-5cm, 20mm) $) --
+					($ (bottom right) + (0cm, 20mm) $);
+				\draw[report thin]
+					($ (bottom right) + (-4.5cm, 15mm) $) --
+					($ (bottom right) + (-4.5cm, 20mm) $);
+				\draw[report thin]
+					($ (bottom right) + (-4.0cm, 15mm) $) --
+					($ (bottom right) + (-4.0cm, 20mm) $);
+				\draw[report thin]
+					($ (bottom right) + (-3.5cm, 15mm) $) --
+					($ (bottom right) + (-3.5cm, 20mm) $);
 			\end{tikzpicture}
 		\fi
 	\fi
@@ -115,7 +142,7 @@
 
 \newcommand\BGfrom[1]{%
 	\AddEverypageHook{%
-		\ifnum\value{page}>\numexpr#1-1\relax
+		\ifnum\value{page}>2
 			\begin{tikzpicture}[remember picture, overlay]
 				\coordinate (top left)     at ($ (current page.north west) + (2cm,  -.5cm) $);
 				\coordinate (top right)    at ($ (current page.north east) + (-.5cm, -.5cm) $);
