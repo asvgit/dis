@@ -31,7 +31,24 @@
 
 \providecommand\No{\char"2116}%{№}%"
 
-%\ExecuteOptions{letterpaper,10pt,oneside,onecolumn,final,openany}
+\usepackage{titlesec}
+\addto\captionsrussian{\renewcommand\contentsname{\vspace{-70pt}\Large{Содержание}\vspace{-42pt}}}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+\titleformat{\chapter}[hang]
+	{\vspace{-70pt}\bfseries\Large}{\thechapter\ }{0pt}{}[\vspace{-28pt}]
+\titleformat{\section}[hang]
+	{\bfseries\large}{\thesection\ }{0pt}{}
+\titleformat{\subsection}[hang]
+	{\bfseries\normalsize}{\thesubsection\ }{0pt}{}
+\titleformat{\subsubsection}[hang]
+	{\normalsize}{\thesubsubsection\ }{0pt}{}
+
+\usepackage{titletoc,tocloft}
+\setlength{\cftsecindent}{0cm}
+\setlength{\cftsubsecindent}{0cm}
+\setlength{\cftsubsubsecindent}{0cm}
+
 \tikzset{
   report black/.style={
     color=black,
@@ -53,6 +70,7 @@
 \AddEverypageHook{%
 	\ifnum\value{page}>1
 		\ifnum\value{page}<3
+		\thispagestyle{empty}
 			\begin{tikzpicture}[remember picture, overlay]
 				\coordinate (top left)     at ($ (current page.north west) + (2cm,  -.5cm) $);
 				\coordinate (top right)    at ($ (current page.north east) + (-.5cm, -.5cm) $);
@@ -156,6 +174,7 @@
 \newcommand\BGfrom[1]{%
 	\AddEverypageHook{%
 		\ifnum\value{page}>2
+		\thispagestyle{empty}
 			\begin{tikzpicture}[remember picture, overlay]
 				\coordinate (top left)     at ($ (current page.north west) + (2cm,  -.5cm) $);
 				\coordinate (top right)    at ($ (current page.north east) + (-.5cm, -.5cm) $);
