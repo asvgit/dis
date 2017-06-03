@@ -22,11 +22,20 @@
 \RequirePackage{lastpage}
 \RequirePackage{everypage}
 \RequirePackage{marvosym}
+\RequirePackage{mwe}
+
+\RequirePackage[left=3cm,right=1cm,
+    top=1.5cm,bottom=2cm,bindingoffset=0cm]{geometry}
+\usepackage{scrextend}
+\changefontsizes[14pt]{14pt}
+
+\providecommand\No{\char"2116}%{№}%"
 
 %\ExecuteOptions{letterpaper,10pt,oneside,onecolumn,final,openany}
 \tikzset{
   report black/.style={
     color=black,
+	font=\scriptsize,
   },
   report frame/.style={
     thick,
@@ -58,9 +67,13 @@
 				\node [report black] at ($ (bottom left) + (6cm, 27.1mm) $) [right] {Дата};
 				\node [report black] at ($ (bottom right) + (-4.7cm, 22mm) $) [right] {Лит.};
 				\node [report black] at ($ (bottom right) + (-3.3cm, 22mm) $) [right] {Лист};
-				\node [report black] at ($ (bottom right) + (-2.8cm, 17mm) $) {\large{\thepage}};%
+				\node [report black] at ($ (bottom right) + (-2.8cm, 17mm) $) {\small{\thepage}};%
 				\node [report black] at ($ (bottom right) + (-1.6cm, 22mm) $) [right] {Листов};
-				\node [report black] at ($ (bottom right) + (-1.0cm, 17mm) $) {\large{\pageref{LastPage}}};%
+				\node [report black] at ($ (bottom right) + (-1.0cm, 17mm) $) {\small{\pageref{LastPage}}};%
+				\node [report black] at ($ (bottom left) + (0cm, 22.1mm) $) [right] {Разраб.};
+				\node [report black] at ($ (bottom left) + (2cm, 22.1mm) $) [right] {Арляпов С.В.};
+				\node [report black] at ($ (bottom left) + (0cm, 17.1mm) $) [right] {Пров.};
+				\node [report black] at ($ (bottom left) + (2cm, 17.1mm) $) [right] {Шлаустас Р.Ю.};
 				%borders
 				\draw[report frame]
 					(bottom right) --
@@ -151,7 +164,7 @@
 				%plases
 				\node [report black] at ($ (bottom left) + (12cm, .7cm) $) {\large{\@title}};
 				\node [report black] at ($ (bottom right) + (-1cm, 1.2cm) $) [right] {Лист};
-				\node [report black] at ($ (bottom right) + (-5mm, 4mm) $) {\large{\thepage}};
+				\node [report black] at ($ (bottom right) + (-5mm, 4mm) $) {\normalsize{\thepage}};
 				\node [report black] at ($ (bottom left) + (0cm, .25cm) $) [right] {Изм.};
 				\node [report black] at ($ (bottom left) + (1cm, .25cm) $) [right] {Лист};
 				\node [report black] at ($ (bottom left) + (2.5cm, .2cm) $) [right] {\No докум.};
@@ -201,5 +214,3 @@
 }
 
 \pagestyle{empty}
-\RequirePackage[left=3cm,right=1cm,
-    top=1.5cm,bottom=2cm,bindingoffset=0cm]{geometry}
