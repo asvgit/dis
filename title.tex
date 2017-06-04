@@ -12,7 +12,7 @@
 	\end{center}
 	\vspace{28pt}
 	\begin{center}
-		????????????????????????????????????????
+		\MakeUppercase{\kurtitle}
 	\end{center}
 	\vspace{-14pt}
 	\begin{center}
@@ -32,4 +32,14 @@
 	\begin{center}
 		Иркутск \\ 2017
 	\end{center}
+\afterpage{
+	\newgeometry{left=3cm,right=1cm,top=1.5cm,bottom=5cm,bindingoffset=0cm}
+	\clearpage
+	\restoregeometry
+}
 \end{titlepage}
+
+\setcounter{page}{2}
+\renewcommand{\thispagestyle}[1]{}
+\tableofcontents
+\thispagestyle{empty}
