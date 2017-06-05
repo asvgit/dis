@@ -1,0 +1,78 @@
+\NeedsTeXFormat{LaTeX2e}[1994/06/01]
+\ProvidesPackage{doceverypage}[2013/01/13 Custom Package]
+
+\tikzset{
+  report black/.style={
+    color=black,
+	font=\scriptsize,
+  },
+  report frame/.style={
+    thick,
+    report black,
+	line width=.7mm,
+  },
+  report thin/.style={
+    thick,
+    report black,
+  },
+}
+
+\AddEverypageHook{%
+	\ifnum\value{page}>2
+	\thispagestyle{empty}
+		\begin{tikzpicture}[remember picture, overlay]
+			\coordinate (top left)     at ($ (current page.north west) + (2cm,  -.5cm) $);
+			\coordinate (top right)    at ($ (current page.north east) + (-.5cm, -.5cm) $);
+			\coordinate (bottom left)  at ($ (current page.south west) + (2cm,  .5cm) $);
+			\coordinate (bottom right) at ($ (current page.south east) + (-.5cm, .5cm) $);%
+			%plases
+			\node [report black] at ($ (bottom left) + (12cm, .7cm) $) {\large{\@title}};
+			\node [report black] at ($ (bottom right) + (-1cm, 1.2cm) $) [right] {Лист};
+			\node [report black] at ($ (bottom right) + (-5mm, 4mm) $) {\normalsize{\thepage}};
+			\node [report black] at ($ (bottom left) + (0cm, .25cm) $) [right] {Изм.};
+			\node [report black] at ($ (bottom left) + (1cm, .25cm) $) [right] {Лист};
+			\node [report black] at ($ (bottom left) + (2.5cm, .2cm) $) [right] {\No докум.};
+			\node [report black] at ($ (bottom left) + (4.5cm, .25cm) $) [right] {Подпись};
+			\node [report black] at ($ (bottom left) + (6cm, .25cm) $) [right] {Дата};%
+			%borders
+			\draw[report frame]
+				(bottom right) --
+				(top right) --
+				(top left) --
+				(bottom left) --
+				(bottom right) --
+				(top right);
+			\draw[report frame]
+				($ (bottom left) + (0cm, 15mm) $) --
+				($ (bottom right) + (0cm, 15mm) $);
+			\draw[report frame]
+				($ (bottom left) + (1cm, 0mm) $) --
+				($ (bottom left) + (1cm, 15mm) $);
+			\draw[report frame]
+				($ (bottom left) + (2cm, 0mm) $) --
+				($ (bottom left) + (2cm, 15mm) $);
+			\draw[report frame]
+				($ (bottom left) + (4.5cm, 0mm) $) --
+				($ (bottom left) + (4.5cm, 15mm) $);
+			\draw[report frame]
+				($ (bottom left) + (6cm, 0mm) $) --
+				($ (bottom left) + (6cm, 15mm) $);
+			\draw[report frame]
+				($ (bottom left) + (7cm, 0mm) $) --
+				($ (bottom left) + (7cm, 15mm) $);
+			\draw[report frame]
+				($ (bottom right) + (-1cm, 0mm) $) --
+				($ (bottom right) + (-1cm, 15mm) $);
+			\draw[report thin]
+				($ (bottom left) + (0cm, 5mm) $) --
+				($ (bottom left) + (7cm, 5mm) $);
+			\draw[report thin]
+				($ (bottom left) + (0cm, 10mm) $) --
+				($ (bottom left) + (7cm, 10mm) $);
+			\draw[report thin]
+				($ (bottom right) + (0cm, 10mm) $) --
+				($ (bottom right) + (-1cm, 10mm) $);
+		\end{tikzpicture}
+	\fi
+}
+\endinput

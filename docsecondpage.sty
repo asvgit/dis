@@ -1,0 +1,123 @@
+\NeedsTeXFormat{LaTeX2e}[1994/06/01]
+\ProvidesPackage{docsecondpage}[2013/01/13 Custom Package]
+
+\tikzset{
+  report black/.style={
+    color=black,
+	font=\scriptsize,
+  },
+  report frame/.style={
+    thick,
+    report black,
+	line width=.7mm,
+  },
+  report thin/.style={
+    thick,
+    report black,
+  },
+}
+
+\AddEverypageHook{%
+	\ifnum\value{page}>1
+		\ifnum\value{page}<3
+		\thispagestyle{empty}
+			\begin{tikzpicture}[remember picture, overlay]
+				\coordinate (top left)     at ($ (current page.north west) + (2cm,  -.5cm) $);
+				\coordinate (top right)    at ($ (current page.north east) + (-.5cm, -.5cm) $);
+				\coordinate (bottom left)  at ($ (current page.south west) + (2cm,  .5cm) $);
+				\coordinate (bottom right) at ($ (current page.south east) + (-.5cm, .5cm) $);%
+				%plases
+				\node [report black] at ($ (bottom left) + (13cm, 3.16cm) $) {\large{\@title}};
+				\node [report black] at ($ (bottom left) + (0cm, 27.1mm) $) [right] {Изм.};
+				\node [report black] at ($ (bottom left) + (1cm, 27.1mm) $) [right] {Лист};
+				\node [report black] at ($ (bottom left) + (2.5cm, 27mm) $) [right] {\No докум.};
+				\node [report black] at ($ (bottom left) + (4.5cm, 27.1mm) $) [right] {Подпись};
+				\node [report black] at ($ (bottom left) + (6cm, 27.1mm) $) [right] {Дата};
+				\node [report black] at ($ (bottom right) + (-4.7cm, 22mm) $) [right] {Лит.};
+				\node [report black] at ($ (bottom right) + (-3.3cm, 22mm) $) [right] {Лист};
+				\node [report black] at ($ (bottom right) + (-2.8cm, 17mm) $) {\small{\thepage}};%
+				\node [report black] at ($ (bottom right) + (-1.6cm, 22mm) $) [right] {Листов};
+				\node [report black] at ($ (bottom right) + (-1.0cm, 17mm) $) {\small{\pageref{LastPage}}};%
+				\node [report black] at ($ (bottom left) + (0cm, 22.1mm) $) [right] {Разраб.};
+				\node [report black] at ($ (bottom left) + (2cm, 22.1mm) $) [right] {Арляпов С.В.};
+				\node [report black] at ($ (bottom left) + (0cm, 17.1mm) $) [right] {Пров.};
+				\node [report black] at ($ (bottom left) + (2cm, 17.1mm) $) [right] {Шлаустас Р.Ю.};
+				%borders
+				\draw[report frame]
+					(bottom right) --
+					(top right) --
+					(top left) --
+					(bottom left) --
+					(bottom right) --
+					(top right);
+				\draw[report frame]
+					($ (bottom left) + (0cm, 40mm) $) --
+					($ (bottom right) + (0cm, 40mm) $);
+				\draw[report frame]
+					($ (bottom left) + (0cm, 25mm) $) --
+					($ (bottom right) + (0cm, 25mm) $);
+				\draw[report frame]
+					($ (bottom left) + (1cm, 25mm) $) --
+					($ (bottom left) + (1cm, 40mm) $);
+				\draw[report frame]
+					($ (bottom left) + (2cm, 0mm) $) --
+					($ (bottom left) + (2cm, 40mm) $);
+				\draw[report frame]
+					($ (bottom left) + (4.5cm, 0mm) $) --
+					($ (bottom left) + (4.5cm, 40mm) $);
+				\draw[report frame]
+					($ (bottom left) + (6cm, 0mm) $) --
+					($ (bottom left) + (6cm, 40mm) $);
+				\draw[report frame]
+					($ (bottom left) + (7cm, 0mm) $) --
+					($ (bottom left) + (7cm, 40mm) $);
+				\draw[report thin]
+					($ (bottom left) + (0cm, 30mm) $) --
+					($ (bottom left) + (7cm, 30mm) $);
+				\draw[report thin]
+					($ (bottom left) + (0cm, 35mm) $) --
+					($ (bottom left) + (7cm, 35mm) $);
+				\draw[report thin]
+					($ (bottom left) + (0cm, 25mm) $) --
+					($ (bottom left) + (7cm, 25mm) $);
+				\draw[report thin]
+					($ (bottom left) + (0cm, 20mm) $) --
+					($ (bottom left) + (7cm, 20mm) $);
+				\draw[report thin]
+					($ (bottom left) + (0cm, 15mm) $) --
+					($ (bottom left) + (7cm, 15mm) $);
+				\draw[report thin]
+					($ (bottom left) + (0cm, 10mm) $) --
+					($ (bottom left) + (7cm, 10mm) $);
+				\draw[report thin]
+					($ (bottom left) + (0cm, 5mm) $) --
+					($ (bottom left) + (7cm, 5mm) $);
+				\draw[report frame]
+					($ (bottom right) + (-5cm, 0mm) $) --
+					($ (bottom right) + (-5cm, 25mm) $);
+				\draw[report frame]
+					($ (bottom right) + (-3.5cm, 15mm) $) --
+					($ (bottom right) + (-3.5cm, 25mm) $);
+				\draw[report frame]
+					($ (bottom right) + (-2cm, 15mm) $) --
+					($ (bottom right) + (-2cm, 25mm) $);
+				\draw[report frame]
+					($ (bottom right) + (-5cm, 15mm) $) --
+					($ (bottom right) + (0cm, 15mm) $);
+				\draw[report frame]
+					($ (bottom right) + (-5cm, 20mm) $) --
+					($ (bottom right) + (0cm, 20mm) $);
+				\draw[report thin]
+					($ (bottom right) + (-4.5cm, 15mm) $) --
+					($ (bottom right) + (-4.5cm, 20mm) $);
+				\draw[report thin]
+					($ (bottom right) + (-4.0cm, 15mm) $) --
+					($ (bottom right) + (-4.0cm, 20mm) $);
+				\draw[report thin]
+					($ (bottom right) + (-3.5cm, 15mm) $) --
+					($ (bottom right) + (-3.5cm, 20mm) $);
+			\end{tikzpicture}
+		\fi
+	\fi
+}
+\endinput
