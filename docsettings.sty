@@ -1,16 +1,20 @@
 \NeedsTeXFormat{LaTeX2e}[1994/06/01]
 \ProvidesPackage{docsettings}[2013/01/13 Custom Package]
+
 %misc
 \usetikzlibrary{calc}
+
 %font
 \setmainfont{Times New Roman}
 \setmonofont{Courier New}
 \changefontsizes[14pt]{14pt}
 \newgeometry{left=3cm,right=1cm,top=1.5cm,bottom=2.5cm,bindingoffset=0cm}
 \providecommand\No{\char"2116}%{№}%"
+
 %captions
 \captionsetup[figure]{justification=centerfirst,labelsep=endash,name=Рисунок}
 \captionsetup[table]{justification=raggedright,labelsep=space}
+
 %titles
 \titleformat{\chapter}[hang]
 	{\vspace{-70pt}\bfseries\Large}{\thechapter\ }{0pt}{}[\vspace{-28pt}]
@@ -20,6 +24,7 @@
 	{\bfseries\normalsize}{\thesubsection\ }{0pt}{}
 \titleformat{\subsubsection}[hang]
 	{\normalsize}{\thesubsubsection\ }{0pt}{}
+
 %table of content
 \addto\captionsrussian{\renewcommand\contentsname{\vspace{-70pt}\Large{Содержание}\vspace{-42pt}}}
 \setcounter{secnumdepth}{3}
@@ -27,5 +32,11 @@
 \setlength{\cftsecindent}{0.5cm}
 \setlength{\cftsubsecindent}{1cm}
 \setlength{\cftsubsubsecindent}{1.5cm}
+\renewcommand\cftchapdotsep{\cftdotsep}
+
+%libs
+\makeatletter
+	\renewcommand\@biblabel[1]{#1.}
+\makeatother
 
 \endinput

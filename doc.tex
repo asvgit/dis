@@ -1,8 +1,9 @@
-\documentclass{kurreport}
+\documentclass[numbers=noenddot]{kurreport}
 %preamble
 \title{КР.430200.09.03.01.ПЗ}
 \providecommand\mytitle{КР. 430200. 09.03.01.ПЗ}
 \providecommand\kurtitle{Разработка документации для конструкторско-технологического продукта с программным обеспечением}
+% \bibliography{src}
 
 \begin{document}
 	\input{title.tex}
@@ -15,4 +16,11 @@
 	\input{src/drawings.tex}
 	\input{src/picture.tex}
 	\input{src/conclusion.tex}
+	\newpage
+	% \begin{center}
+	% \end{center}
+	\bibliographystyle{/home/sava/latex/utf8gost705u}
+	\addcontentsline{toc}{chapter}{Список использованных источников}
+	\renewcommand\bibname{Список использованных источников}
+	\bibliography{biblio}
 \end{document}
