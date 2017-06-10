@@ -32,11 +32,14 @@
 \setlength{\cftsecindent}{0.5cm}
 \setlength{\cftsubsecindent}{1cm}
 \setlength{\cftsubsubsecindent}{1.5cm}
-\renewcommand\cftchapdotsep{\cftdotsep}
+% \renewcommand\cftchapdotsep{\cftdotsep}
+\renewcommand{\cftdot}{}
 
 %libs
 \makeatletter
 	\renewcommand\@biblabel[1]{#1.}
 \makeatother
+
+\renewcommand\numberline[1]{#1~~}
 
 \endinput
