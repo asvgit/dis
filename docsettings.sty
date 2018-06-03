@@ -7,9 +7,13 @@
 %font
 \setmainfont{Times New Roman}
 \setmonofont{Courier New}
-\changefontsizes[21pt]{14pt}
-\newgeometry{left=3cm,right=1cm,top=1.5cm,bottom=2.5cm,bindingoffset=0cm}
+\changefontsizes[25pt]{14pt}
+\newgeometry{left=2.5cm,right=1cm,top=1.5cm,bottom=2.5cm,bindingoffset=0cm}
 \providecommand\No{\char"2116}%{№}%"
+
+\newcounter{countsec}
+\newcommand{\chap}[1]{\stepcounter{countsec}\stepcounter{chapter}\chapter*{\arabic{countsec} #1}
+		\addcontentsline{toc}{chapter}{\arabic{countsec} #1}}
 
 %captions
 \captionsetup[figure]{justification=centerfirst,labelsep=endash,name=Рисунок}
@@ -17,21 +21,26 @@
 
 %titles
 \titleformat{\chapter}[hang]
-	{\vspace{-70pt}\bfseries\Large}{\thechapter\ }{0pt}{}[\vspace{-28pt}]
+	{\vspace{-70pt}\normalsize}{\thechapter\ }{0pt}{\centering}[\vspace{-42pt}]
 \titleformat{\section}[hang]
-	{\bfseries\large}{\thesection\ }{0pt}{}
+{\normalsize}{\thesection\ }{0pt}{}[\vspace{-11pt}]
 \titleformat{\subsection}[hang]
-	{\bfseries\normalsize}{\thesubsection\ }{0pt}{}
+	{\normalsize}{\thesubsection\ }{0pt}{}
 \titleformat{\subsubsection}[hang]
 	{\normalsize}{\thesubsubsection\ }{0pt}{}
 
 %table of content
-\addto\captionsrussian{\renewcommand\contentsname{\vspace{-70pt}\Large{Содержание}\vspace{-42pt}}}
+\addto\captionsrussian{\renewcommand\contentsname{\vspace{-70pt}\hfill\mdseries\normalsize{Содержание}\hfill\vspace{-42pt}}}
+\renewcommand{\cftchapfont}{\mdseries}
+\renewcommand{\cftchappagefont}{\mdseries}
+\renewcommand\cftchapafterpnum{\vskip-7pt}
+\renewcommand\cftsecafterpnum{\vskip-7pt}
+\renewcommand\cftsubsecafterpnum{\vskip-7pt}
 \setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{2}
-\setlength{\cftsecindent}{0.5cm}
-\setlength{\cftsubsecindent}{1cm}
-\setlength{\cftsubsubsecindent}{1.5cm}
+\setlength{\cftsecindent}{0.0cm}
+\setlength{\cftsubsecindent}{0cm}
+\setlength{\cftsubsubsecindent}{0.0cm}
 % \renewcommand\cftchapdotsep{\cftdotsep}
 \renewcommand{\cftdot}{}
 
