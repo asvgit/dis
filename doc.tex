@@ -5,6 +5,9 @@
 \providecommand\kurtitle{Разработка документации для конструкторско-технологического продукта с программным обеспечением}
 % \bibliography{src}
 
+\newcounter{countsec}
+\newcommand{\chap}[1]{\stepcounter{countsec}\stepcounter{chapter}\chapter*{\arabic{countsec} #1}
+		\addcontentsline{toc}{chapter}{\arabic{countsec} #1}}
 \begin{document}
 	\input{title.tex}
 	\input{src/introduction.tex}
@@ -17,8 +20,6 @@
 	\input{src/picture.tex}
 	\input{src/conclusion.tex}
 	\newpage
-	% \begin{center}
-	% \end{center}
 	\bibliographystyle{/home/groot/latex/utf8gost705u}
 	\addcontentsline{toc}{chapter}{Список использованных источников}
 	\renewcommand\bibname{Список использованных источников}
