@@ -4,7 +4,8 @@
 \tikzset{
   report black/.style={
     color=black,
-	font=\scriptsize,
+	% base font=Gost Type A,
+	% font=\testkpse,
   },
   report frame/.style={
     thick,
@@ -22,26 +23,56 @@
 		\ifnum\value{page}<3
 		\thispagestyle{empty}
 			\begin{tikzpicture}[remember picture, overlay]
-				\coordinate (top left)     at ($ (current page.north west) + (2cm,  -.5cm) $);
-				\coordinate (top right)    at ($ (current page.north east) + (-.5cm, -.5cm) $);
-				\coordinate (bottom left)  at ($ (current page.south west) + (2cm,  .5cm) $);
-				\coordinate (bottom right) at ($ (current page.south east) + (-.5cm, .5cm) $);%
+				\coordinate (top left)     at ($ (current page.north west) + (2cm,  -.53cm) $);
+				\coordinate (top right)    at ($ (current page.north east) + (-.5cm, -.53cm) $);
+				\coordinate (bottom left)  at ($ (current page.south west) + (2cm,  .53cm) $);
+				\coordinate (bottom right) at ($ (current page.south east) + (-.5cm, .53cm) $);%
 				%plases
-				\node [report black] at ($ (bottom left) + (13cm, 3.16cm) $) {\large{\@title}};
-				\node [report black] at ($ (bottom left) + (0cm, 27.1mm) $) [right] {Изм.};
-				\node [report black] at ($ (bottom left) + (1cm, 27.1mm) $) [right] {Лист};
-				\node [report black] at ($ (bottom left) + (2.5cm, 27mm) $) [right] {\No докум.};
-				\node [report black] at ($ (bottom left) + (4.5cm, 27.1mm) $) [right] {Подпись};
-				\node [report black] at ($ (bottom left) + (6cm, 27.1mm) $) [right] {Дата};
-				\node [report black] at ($ (bottom right) + (-4.7cm, 22mm) $) [right] {Лит.};
-				\node [report black] at ($ (bottom right) + (-3.3cm, 22mm) $) [right] {Лист};
-				\node [report black] at ($ (bottom right) + (-2.8cm, 17mm) $) {\small{\thepage}};%
-				\node [report black] at ($ (bottom right) + (-1.6cm, 22mm) $) [right] {Листов};
-				\node [report black] at ($ (bottom right) + (-1.0cm, 17mm) $) {\small{\pageref{LastPage}}};%
-				\node [report black] at ($ (bottom left) + (0cm, 22.1mm) $) [right] {Разраб.};
-				\node [report black] at ($ (bottom left) + (2cm, 22.1mm) $) [right] {Арляпов С.В.};
-				\node [report black] at ($ (bottom left) + (0cm, 17.1mm) $) [right] {Пров.};
-				\node [report black] at ($ (bottom left) + (2cm, 17.1mm) $) [right] {Шлаустас Р.Ю.};
+				\node [report black] at ($ (bottom left) + (13cm, 3.16cm) $) {\textit{\Large\testkpse \@title}};
+				\node [report black] at ($ (bottom left) + (10.2cm, 2.06cm) $)
+					{\textit{\normalsize\testkpse Логическое управление}};
+				\node [report black] at ($ (bottom left) + (10.2cm, 1.56cm) $)
+					{\textit{\normalsize\testkpse имитационным процессом}};
+				\node [report black] at ($ (bottom left) + (10.2cm, 1.22cm) $)
+					{\textit{\normalsize\testkpse на основе системы автоматического}};
+				\node [report black] at ($ (bottom left) + (10.2cm, 0.76cm) $)
+					{\textit{\normalsize\testkpse доказательства теорем}};
+				\node [report black] at ($ (bottom left) + (0cm, 27.1mm) $) [right]
+					{\textit{\footnotesize\testkpse Изм.}};
+				\node [report black] at ($ (bottom left) + (1cm, 27.1mm) $) [right]
+					{\textit{\footnotesize\testkpse Лист}};
+				\node [report black] at ($ (bottom left) + (2.5cm, 27mm) $) [right]
+					{\textit{\footnotesize\testkpse \No \ \  докум.}};
+				\node [report black] at ($ (bottom left) + (4.5cm, 27.1mm) $) [right]
+					{\textit{\footnotesize\testkpse Подпись}};
+				\node [report black] at ($ (bottom left) + (6cm, 27.1mm) $) [right]
+					{\textit{\footnotesize\testkpse Дата}};
+				\node [report black] at ($ (bottom right) + (-4.7cm, 22mm) $) [right]
+					{\textit{\footnotesize\testkpse Лит.}};
+				\node [report black] at ($ (bottom right) + (-3.3cm, 22mm) $) [right]
+					{\textit{\footnotesize\testkpse Лист}};
+				\node [report black] at ($ (bottom right) + (-2.8cm, 17.1mm) $)
+					{\textit{\scriptsize\testkpse \thepage}};%
+				\node [report black] at ($ (bottom right) + (-1.6cm, 22mm) $) [right]
+					{\textit{\footnotesize\testkpse Листов}};
+				\node [report black] at ($ (bottom right) + (-1.0cm, 17.1mm) $)
+					{\textit{\scriptsize\testkpse \pageref{LastPage}}};%
+				\node [report black] at ($ (bottom left) + (0cm, 22.1mm) $) [right]
+					{\textit{\footnotesize\testkpse Разраб.}};
+				\node [report black] at ($ (bottom left) + (2cm, 22.1mm) $) [right]
+					{\textit{\footnotesize\testkpse Арляпов С.В.}};
+				\node [report black] at ($ (bottom left) + (0cm, 17.1mm) $) [right]
+					{\textit{\footnotesize\testkpse Пров.}};
+				\node [report black] at ($ (bottom left) + (2cm, 17.1mm) $) [right]
+					{\textit{\footnotesize\testkpse Звонков И.В.}};
+				\node [report black] at ($ (bottom left) + (0cm, 7.1mm) $) [right]
+					{\textit{\footnotesize\testkpse Н. Контр.}};
+				\node [report black] at ($ (bottom left) + (2cm, 7.1mm) $) [right]
+					{\textit{\footnotesize\testkpse Матиенко Л.В.}};
+				\node [report black] at ($ (bottom left) + (0cm, 2.1mm) $) [right]
+					{\textit{\footnotesize\testkpse Утверд.}};
+				\node [report black] at ($ (bottom left) + (2cm, 2.1mm) $) [right]
+					{\textit{\footnotesize\testkpse Аршинский Л.В.}};
 				%borders
 				\draw[report frame]
 					(bottom right) --

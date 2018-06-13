@@ -4,8 +4,6 @@
 \tikzset{
   report black/.style={
     color=black,
-	font=\scriptsize,
-	% font=\scriptsize,
   },
   report frame/.style={
     thick,
@@ -22,19 +20,26 @@
 	\ifnum\value{page}>2
 	\thispagestyle{empty}
 		\begin{tikzpicture}[remember picture, overlay]
-			\coordinate (top left)     at ($ (current page.north west) + (2cm,  -.5cm) $);
-			\coordinate (top right)    at ($ (current page.north east) + (-.5cm, -.5cm) $);
-			\coordinate (bottom left)  at ($ (current page.south west) + (2cm,  .5cm) $);
-			\coordinate (bottom right) at ($ (current page.south east) + (-.5cm, .5cm) $);%
+			\coordinate (top left)     at ($ (current page.north west) + (2cm,  -.53cm) $);
+			\coordinate (top right)    at ($ (current page.north east) + (-.5cm, -.53cm) $);
+			\coordinate (bottom left)  at ($ (current page.south west) + (2cm,  .53cm) $);
+			\coordinate (bottom right) at ($ (current page.south east) + (-.5cm, .53cm) $);%
 			%plases
-			\node [report black] at ($ (bottom left) + (12cm, .7cm) $) {\large{\@title}};
-			\node [report black] at ($ (bottom right) + (-1cm, 1.2cm) $) [right] {Лист};
-			\node [report black] at ($ (bottom right) + (-5mm, 4mm) $) {\normalsize{\thepage}};
-			\node [report black] at ($ (bottom left) + (0cm, .25cm) $) [right] {Изм.};
-			\node [report black] at ($ (bottom left) + (1cm, .25cm) $) [right] {Лист};
-			\node [report black] at ($ (bottom left) + (2.5cm, .2cm) $) [right] {\No докум.};
-			\node [report black] at ($ (bottom left) + (4.5cm, .25cm) $) [right] {Подпись};
-			\node [report black] at ($ (bottom left) + (6cm, .25cm) $) [right] {Дата};%
+			\node [report black] at ($ (bottom left) + (12cm, .7cm) $) {\textit{\Large\testkpse \@title}};
+			\node [report black] at ($ (bottom right) + (-1cm, 1.2cm) $) [right]
+				{\textit{\footnotesize\testkpse Лист}};
+			\node [report black] at ($ (bottom right) + (-5mm, 4mm) $)
+				{\textit{\large\testkpse \thepage}};
+			\node [report black] at ($ (bottom left) + (0cm, .25cm) $) [right]
+				{\textit{\footnotesize\testkpse Изм.}};
+			\node [report black] at ($ (bottom left) + (1cm, .25cm) $) [right]
+				{\textit{\footnotesize\testkpse Лист}};
+			\node [report black] at ($ (bottom left) + (2.5cm, .2cm) $) [right]
+				{\textit{\footnotesize\testkpse \No \ \  докум.}};
+			\node [report black] at ($ (bottom left) + (4.5cm, .25cm) $) [right]
+				{\textit{\footnotesize\testkpse Подпись}};
+			\node [report black] at ($ (bottom left) + (6cm, .25cm) $) [right]
+				{\textit{\footnotesize\testkpse Дата}};%
 			%borders
 			\draw[report frame]
 				(bottom right) --
@@ -43,6 +48,9 @@
 				(bottom left) --
 				(bottom right) --
 				(top right);
+			% \draw[report frame]
+			%     ($ (bottom left) + (0cm, 0.3mm) $) --
+			%     ($ (bottom right) + (0cm, 0.3mm) $);
 			\draw[report frame]
 				($ (bottom left) + (0cm, 15mm) $) --
 				($ (bottom right) + (0cm, 15mm) $);
