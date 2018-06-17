@@ -53,4 +53,26 @@
 
 \renewcommand\numberline[1]{#1~~}
 
+\makeatletter
+\renewcommand{\@listI}{%
+\topsep=0pt \leftmargin=0pt \itemindent=28pt }
+\makeatother
+
+\makeatletter
+\let\old@itemize=\itemize
+\def\itemize{\old@itemize
+	\setlength{\itemsep}{0pt}
+	\setlength{\parskip}{0pt}
+	\setlength{\leftskip}{0pt}
+}
+\makeatother
+
+\makeatletter
+\let\old@enumerate=\enumerate
+\def\enumerate{\old@enumerate
+	\setlength{\itemsep}{0pt}
+	\setlength{\parskip}{0pt}
+	\setlength{\leftskip}{0pt}
+}\makeatother
+
 \endinput
