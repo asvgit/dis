@@ -17,7 +17,7 @@
 }
 
 \AddEverypageHook{%
-	\ifnum\value{page}>2
+	\ifnum\value{page}>4
 	\thispagestyle{empty}
 		\begin{tikzpicture}[remember picture, overlay]
 			\coordinate (top left)     at ($ (current page.north west) + (2cm,  -.53cm) $);

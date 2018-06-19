@@ -16,7 +16,8 @@
 
 \newcounter{countsec}
 \newcommand{\chap}[1]{\stepcounter{countsec}\stepcounter{chapter}\chapter*{\arabic{countsec} #1}
-		\addcontentsline{toc}{chapter}{\arabic{countsec} #1}}
+	\addcontentsline{toc}{chapter}{\arabic{countsec} #1}}
+\setlength{\cftbeforechapskip}{0pt}
 
 %captions
 \captionsetup[figure]{justification=centerfirst,labelsep=endash,name=Рисунок}

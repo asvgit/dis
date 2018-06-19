@@ -19,8 +19,8 @@
 }
 
 \AddEverypageHook{%
-	\ifnum\value{page}>1
-		\ifnum\value{page}<3
+	\ifnum\value{page}>3
+		\ifnum\value{page}<5
 		\thispagestyle{empty}
 			\begin{tikzpicture}[remember picture, overlay]
 				\coordinate (top left)     at ($ (current page.north west) + (2cm,  -.53cm) $);
@@ -53,6 +53,10 @@
 					{\textit{\footnotesize\testkpse Лист}};
 				\node [report black] at ($ (bottom right) + (-2.8cm, 17.1mm) $)
 					{\textit{\scriptsize\testkpse \thepage}};%
+				\node [report black] at ($ (bottom right) + (-3.3cm, 10mm) $) [right]
+					{\textit{\testkpse ИрГУПС}};
+				\node [report black] at ($ (bottom right) + (-3.6cm, 4mm) $) [right]
+					{\textit{\testkpse ПИм.1-16-1}};
 				\node [report black] at ($ (bottom right) + (-1.6cm, 22mm) $) [right]
 					{\textit{\footnotesize\testkpse Листов}};
 				\node [report black] at ($ (bottom right) + (-1.0cm, 17.1mm) $)
