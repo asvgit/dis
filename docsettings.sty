@@ -13,23 +13,28 @@
 \changefontsizes[25pt]{14pt}
 \newgeometry{left=2.5cm,right=1cm,top=1.5cm,bottom=2.5cm,bindingoffset=0cm}
 \providecommand\No{\char"2116}%{№}%"
+\parindent=11mm
 
 \newcounter{countsec}
 \newcommand{\chap}[1]{\stepcounter{countsec}\stepcounter{chapter}\chapter*{\arabic{countsec} #1}
 	\addcontentsline{toc}{chapter}{\arabic{countsec} #1}}
+\newcommand{\schap}[1]{\newpage\centerline{#1}
+	\addcontentsline{toc}{chapter}{#1}}
+\newcommand{\ichap}[1]{\newpage\centerline{#1}
+	\addcontentsline{toc}{chapter}{\hspace{2.5mm} #1}}
 \setlength{\cftbeforechapskip}{0pt}
 
 %captions
 \captionsetup[figure]{justification=centerfirst,labelsep=endash,name=Рисунок}
-\captionsetup[table]{justification=raggedright,labelsep=space}
+\captionsetup[table]{justification=raggedright,labelsep=endash}
 
 %titles
 \titleformat{\chapter}[hang]
-	{\vspace{-70pt}\normalsize}{\thechapter\ }{0pt}{\centering}[\vspace{-42pt}]
+	{\vspace{-70pt}\normalsize}{\thechapter\ }{0pt}{\hspace{11mm}}[\vspace{-42pt}]
 \titleformat{\section}[hang]
-{\normalsize}{\thesection\ }{0pt}{\hspace{14pt}\thesection \ }[\vspace{-11pt}]
+{\normalsize}{\thesection\ }{0pt}{\hspace{11mm}\thesection \ }[\vspace{-11pt}]
 \titleformat{\subsection}[hang]
-	{\normalsize}{\thesubsection\ }{0pt}{\hspace{14pt}\thesubsection\ }
+	{\normalsize}{\thesubsection\ }{0pt}{\hspace{11mm}\thesubsection\ }
 \titleformat{\subsubsection}[hang]
 	{\normalsize}{\thesubsubsection\ }{0pt}{}
 
@@ -42,9 +47,10 @@
 \renewcommand\cftsubsecafterpnum{\vskip-7pt}
 \setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{2}
-\setlength{\cftsecindent}{0.0cm}
-\setlength{\cftsubsecindent}{0cm}
-\setlength{\cftsubsubsecindent}{0.0cm}
+\setlength{\cftchapindent}{10mm}
+\setlength{\cftsecindent}{10mm}
+\setlength{\cftsubsecindent}{10mm}
+\setlength{\cftsubsubsecindent}{10mm}
 % \renewcommand\cftchapdotsep{\cftdotsep}
 \renewcommand{\cftdot}{}
 
@@ -79,5 +85,10 @@
 
 \lstset{basicstyle=\linespread{0.8}\footnotesize\ttfamily,breaklines=true}
 % \lstset{framextopmargin=50pt,frame=bottomline}
+
+% \tolerance=1
+% \emergencystretch=\maxdimen
+% \hyphenpenalty=10000
+% \hbadness=10000
 
 \endinput
