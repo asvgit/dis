@@ -56,14 +56,14 @@
 
 %libs
 \makeatletter
-	\renewcommand\@biblabel[1]{#1.}
+	\renewcommand\@biblabel[1]{\ \ \ \ \ \ #1.\ \ \ \ \ }
 \makeatother
 
 \renewcommand\numberline[1]{#1~~}
 
 \makeatletter
 \renewcommand{\@listI}{%
-\topsep=0pt \leftmargin=0pt \itemindent=28pt }
+\topsep=0pt \leftmargin=0mm \itemindent=0mm \itemsep=-14pt}
 \makeatother
 
 \makeatletter
@@ -72,6 +72,7 @@
 	\setlength{\itemsep}{0pt}
 	\setlength{\parskip}{0pt}
 	\setlength{\leftskip}{0pt}
+	\setlength{\itemindent}{28pt}
 }
 \makeatother
 
